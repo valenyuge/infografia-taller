@@ -620,3 +620,12 @@ body.login-page {
     width: 1400px;
     height: 600px;
 }
+
+.login-page .window-body {
+    max-width: 420px;
+    max-height: 100px;
+}
+
+.start-button-link {
+    text-decoration: none; /* Quita el subrayado */
+}
