@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Generativa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="desktop-background">
+        <div class="desktop-icons">
+            <div class="icon" id="icon-origen">
+                <img src="img/carpeta.png" alt="Carpeta">
+                <span>IA Generativa: Origen y lenguaje</span>
+            </div>
+            <div class="icon" id="icon-arte">
+                <img src="img/internet.png" alt="Internet">
+                <span>Arte e Inteligencia artificial</span>
+            </div>
+            <div class="icon" id="icon-ley">
+                <img src="img/video.png" alt="Video">
+                <span>¿Quién firma la obra?</span>
+            </div>
+            <div class="icon" id="icon-debate"> <img src="img/paint.png" alt="Paint">
+                <span>¿Es arte si lo hace una máquina?</span>
+            </div>
+        </div>
+
+      <div class="window" id="window-origen" style="top: 50px; left: 300px;">
+    <div class="title-bar">
+        <span class="title-bar-text">Archivos</span>
+        <div class="title-bar-controls">
+            <button class="close-btn">r</button>
+        </div>
+    </div>
+
+    <div class="browse-toolbar">
+        <label for="look-in"><u>D</u>irección</label>
+        <div class="dropdown-mock">
+            <img src="img/carpeta-logo.png" alt="C: Drive Icon">
+            <span>IA Generativa: Origen y lenguaje</span>
+            <div class="arrow-down">▼</div>
+        </div>
+    </div>
+
+<div class="window-body file-explorer-body">
+    <div class="file-list">
+        <div class="folder-item">
+            <img src="img/carpeta-archivo.png" alt="Carpeta">
+            <span>Mi documento</span>
+        </div>
+        <div class="folder-item">
+            <img src="img/carpeta-archivo.png" alt="Carpeta">
+            <span>Mi documento</span>
+        </div>
+        <div class="folder-item">
+            <img src="img/carpeta-archivo.png" alt="Carpeta">
+            <span>Mi documento</span>
+        </div>
+        <div class="folder-item">
+            <img src="img/carpeta-archivo.png" alt="Carpeta">
+            <span>Mi documento</span>
+        </div>
+        <div class="folder-item">
+            <img src="img/carpeta-archivo.png" alt="Carpeta">
+            <span>Mi documento</span>
+        </div>
+    </div>
+</div>
+
+    <div class="file-input-area">
+        <div class="file-input-row">
+            <label for="file-name"><u>N</u>ombre de archivo:</label>
+            <input type="text" id="file-name" name="file-name">
+        </div>
+        <div class="file-input-row">
+            <label for="file-type"><u>T</u>ipo de archivos:</label>
+            <select id="file-type" name="file-type">
+                <option selected>Fechas</option>
+                <option>Todos los archivos (*.*)</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="window" id="window-arte" style="top: 100px; left: 300px;">
+            <div class="title-bar">
+                <span class="title-bar-text">
+                    <img src="img/internet-explorer.png" alt="IE Icon">
+                    Arte e Inteligencia Artificial - Microsoft Internet Explorer
+                </span>
+                <div class="title-bar-controls">
+                    <button class="close-btn">r</button>
+                </div>
+            </div>
+            <div class="app-toolbar">
+                <span><u>A</u>rchivo</span>
+                <span><u>E</u>dición</span>
+                <span><u>V</u>er</span>
+                <span><u>I</u>r</span>
+                <span><u>F</u>avoritos</span>
+                <span><u>A</u>yuda</span>
+            </div>
+            <div class="ie-toolbar">
+                <div class="ie-button">
+                    <img src="img/back.png" alt="Back">
+                    <span>Atrás</span>
+                </div>
+                <div class="ie-button">
+                    <img src="img/forward.png" alt="Forward">
+                    <span>Adelante</span>
+                </div>
+            </div>
+            <div class="ie-address-bar">
+                <label><u>D</u>irección</label>
+                <input type="text" value="http://www.arte_e_ia.com/">
+            </div>
+            <div class="window-body ie-body">
+                <h2>Hola</h2>
+                <p>Hola</p>
+            </div>
+        </div>
+
+<div class="window" id="window-ley" style="top: 100px; left: 300px;">
+            <div class="title-bar">
+                <span class="title-bar-text">Windows Media Player</span>
+                <div class="title-bar-controls">
+                    <button class="close-btn">r</button>
+                </div>
+            </div>
+            <div class="app-toolbar">
+                <span><u>A</u>rchivo</span>
+                <span><u>V</u>ista</span>
+                <span><u>P</u>lay</span>
+                <span><u>N</u>avegar</span>
+                <span><u>F</u>avoritos</span>
+                <span><u>A</u>yuda</span>
+            </div>
+            <div class="media-player-body">
+                <div class="media-player-screen">
+                    </div>
+                <div class="media-player-controls">
+                    <div class="controls-left">
+                        <button>►</button>
+                        <button>❚❚</button>
+                        <button>■</button>
+                    </div>
+                    <div class="controls-right">
+                        <img src="img/volumen.png" alt="Volumen" class="volume-icon-img">
+                        <div class="volume-slider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="window" id="window-debate" style="top: 100px; left: 300px;">
+            <div class="title-bar">
+                <span class="title-bar-text">Paint</span>
+                <div class="title-bar-controls">
+                    <button class="close-btn">r</button>
+                </div>
+            </div>
+            <div class="app-toolbar">
+                <span><u>A</u>rchivo</span>
+                <span><u>E</u>ditar</span>
+                <span><u>V</u>ista</span>
+                <span><u>I</u>magen</span>
+                <span><u>C</u>olores</span>
+                <span><u>A</u>yuda</span>
+            </div>
+            <div class="paint-body">
+                <div class="paint-toolbar">
+                    <div class="tool"><img src="img/tool-select.png" alt="Select"></div>
+                    <div class="tool"><img src="img/tool-eraser.png" alt="Eraser"></div>
+                    <div class="tool"><img src="img/tool-fill.png" alt="Fill"></div>
+                    <div class="tool"><img src="img/tool-dropper.png" alt="Dropper"></div>
+                    <div class="tool"><img src="img/tool-zoom.png" alt="Zoom"></div>
+                    <div class="tool"><img src="img/tool-pencil.png" alt="Pencil"></div>
+                    <div class="tool"><img src="img/tool-brush.png" alt="Brush"></div>
+                    <div class="tool"><img src="img/tool-aerosol.png" alt="Aerosol"></div>
+                    <div class="tool"><img src="img/tool-text.png" alt="Text"></div>
+                    <div class="tool"><img src="img/tool-line.png" alt="Line"></div>
+                    <div class="tool"><img src="img/tool-rect.png" alt="Rectangle"></div>
+                    <div class="tool"><img src="img/tool-circle.png" alt="Circle"></div>
+                </div>
+                <div class="paint-canvas">
+                    </div>
+            </div>
+            <div class="paint-palette">
+                <div class="color-box" style="background-color: #000;"></div>
+                <div class="color-box" style="background-color: #fff;"></div>
+                <div class="color-box" style="background-color: #C0C7C8;"></div>
+                <div class="color-box" style="background-color: #87888F;"></div>
+                <div class="color-box" style="background-color: #A80057;"></div>
+                <div class="color-box" style="background-color: #FF0000;"></div>
+                <div class="color-box" style="background-color: #A8A857;"></div>                
+                <div class="color-box" style="background-color: #FFFF00;"></div>
+                <div class="color-box" style="background-color: #00A857;"></div>
+                <div class="color-box" style="background-color: #00FF00;"></div>
+                <div class="color-box" style="background-color: #57A8A8;"></div>
+                <div class="color-box" style="background-color: #00FFFF;"></div>
+                <div class="color-box" style="background-color: #0000A8;"></div>
+                <div class="color-box" style="background-color: #0000FF;"></div>
+            </div>
+        </div>
+
+        <div class="taskbar">
+            <button class="start-button">Inicio</button>
+            <div class="taskbar-tabs"></div>
+            <div class="clock" id="clock"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
