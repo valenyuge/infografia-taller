@@ -622,8 +622,8 @@ body.login-page {
 }
 
 .login-page .window-body {
-    max-width: 420px;
-    max-height: 100px;
+    max-width: 420px !important;
+    max-height: 100px !important;
 }
 
 .start-button-link {
