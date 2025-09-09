@@ -719,8 +719,14 @@ body.login-page {
 
 /* Esta regla es para el CONTENIDO, y es la que lleva el padding y la fuente. */
 .notepad-content {
-    padding: 10px; 
+    padding: 10px;
     font-size: 15px;
+    height: 100%; /* Ocupa toda la altura del marco blanco */
+    box-sizing: border-box;
+    
+    /* --- Propiedades Flexbox añadidas --- */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente (título arriba, textarea abajo) */
 }
 
 .notepad-content h2 {
@@ -753,13 +759,19 @@ body.login-page {
     color: #000080;
 }
 
-/* Estilo para el textarea del bloc de notas editable */
 .notepad-content textarea {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    min-height: 100px; /* Le da una altura mínima razonable */
-    box-sizing: border-box; /* Evita que se desborde por los bordes */
-    border: 1px inset #808080; /* Borde clásico */
-    resize: vertical; /* Permite al usuario cambiar la altura pero no el ancho */
-    font-size: 15px;
-    padding-left: 5px;
+    flex-grow: 1; /* <-- ESTA ES LA CLAVE: hace que el textarea crezca */
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px inset #808080;
+    resize: vertical;
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+/* --- Anular el max-width solo para la ventana de Notas --- */
+#window-notas {
+    max-width: none; 
+    max-height: none;
+    width: 35%;    /* Establece el nuevo ancho que desees */
+    height: 40%;   /* Establece el nuevo alto que desees */
 }
