@@ -207,3 +207,48 @@ document.addEventListener('mouseup', () => {
 
         // La lógica para cerrar y mover ya funciona para todas las ventanas.
     }
+
+    // --- LÓGICA PARA LAS CARPETAS DENTRO DEL EXPLORADOR ---
+    const folder1960 = document.getElementById('folder-1960');
+    const window1960Texto = document.getElementById('window-1960-texto');
+    const window1960Imagen = document.getElementById('window-1960-imagen');
+
+    if (folder1960 && window1960Texto && window1960Imagen) {
+        
+        folder1960.addEventListener('click', () => {
+            // Muestra la ventana de texto
+            window1960Texto.style.display = 'block';
+            highestZIndex++;
+            window1960Texto.style.zIndex = highestZIndex;
+
+            // Muestra la ventana de imagen
+            window1960Imagen.style.display = 'block';
+            highestZIndex++;
+            window1960Imagen.style.zIndex = highestZIndex;
+        });
+    }
+
+    // --- LÓGICA PARA LAS CARPETAS DENTRO DEL EXPLORADOR ---
+    document.querySelectorAll('.folder-item').forEach(folder => {
+        folder.addEventListener('click', () => {
+            const folderId = folder.id; // ej: "folder-1960"
+            if(folderId) {
+                const baseId = folderId.split('-')[1]; // ej: "1960"
+                
+                // Busca y abre las dos ventanas correspondientes
+                const windowTexto = document.getElementById('window-' + baseId + '-texto');
+                const windowImagen = document.getElementById('window-' + baseId + '-imagen');
+
+                if (windowTexto) {
+                    windowTexto.style.display = 'block';
+                    highestZIndex++;
+                    windowTexto.style.zIndex = highestZIndex;
+                }
+                if (windowImagen) {
+                    windowImagen.style.display = 'block';
+                    highestZIndex++;
+                    windowImagen.style.zIndex = highestZIndex;
+                }
+            }
+        });
+    });

@@ -135,8 +135,8 @@ body.login-page {
 }
 
 .icon img {
-    width: 32px; 
-    height: 32px;
+    width: 50px; 
+    height: 50px;
 }
 
 .icon span {
@@ -144,7 +144,7 @@ body.login-page {
     text-shadow: 1px 1px 0 black; 
     margin-top: 5px;
     padding: 2px 4px;
-    font-size: 13px; 
+    font-size: 15px; 
     background-color: transparent; 
     border: 1px dotted transparent; 
 }
@@ -631,3 +631,59 @@ body.login-page {
 .start-button-link {
     text-decoration: none; /* Quita el subrayado */
 } 
+
+.desktop-icons-right {
+    position: absolute; /* Posicionamiento absoluto sobre el fondo */
+    top: 20px;          /* Distancia desde arriba */
+    right: 20px;        /* Distancia desde la derecha */
+    z-index: 2;         /* Para que esté sobre el sombreado */
+}
+
+/* --- Estilos para Ventanas tipo Bloc de Notas --- */
+
+.window.notepad {
+    max-width: 500px;
+    max-height: 545px;
+}
+
+.notepad .app-toolbar {
+    border-bottom: 1px solid #c0c0c0; /* Sin línea visible en el menú */
+}
+
+.notepad-body {
+    padding: 0;
+    height: calc(100% - 48px);
+    border: 1px solid #808080;
+    margin: 0 2px 2px 2px;
+    background-color: #fff;
+    border-top: 2px inset #808080;
+    border-left: 2px inset #808080;
+    overflow-y: auto; /* Agrega scroll si el texto es muy largo */
+}
+
+/* Nuevo contenedor para el texto con la fuente correcta */
+.notepad-content {
+    padding: 15px 10px;
+    font-size: 15px;
+}
+
+.notepad-content h2 {
+    font-weight: bold; /* Título en negrita */
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.notepad-content p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.4; /* Espacio entre líneas */
+    letter-spacing: 5px;
+}
+
+.notepad-body img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
