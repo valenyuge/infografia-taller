@@ -252,3 +252,54 @@ document.addEventListener('mouseup', () => {
             }
         });
     });
+
+    // --- LÓGICA PARA LA VENTANA DE NOTAS ---
+    const iconNotas = document.getElementById('icon-notas');
+    const windowNotas = document.getElementById('window-notas');
+    
+    if (iconNotas && windowNotas) {
+        
+        iconNotas.addEventListener('click', () => {
+            // Muestra la ventana de texto editable
+            windowNotas.style.display = 'block';
+            highestZIndex++;
+            windowNotas.style.zIndex = highestZIndex;
+        });
+    }
+
+    // --- LÓGICA PARA EL BOTÓN ENVIAR ---
+    const sendButton = document.getElementById('sendButton');
+    const commentsWindow = document.getElementById('window-comentarios');
+    
+    if (sendButton && commentsWindow) {
+        const commentsContainer = commentsWindow.querySelector('.comments-container');
+        const notesTextarea = document.querySelector('#window-notas textarea');
+
+        sendButton.addEventListener('click', () => {
+            // 1. Obtiene el nombre de usuario guardado y el texto del comentario.
+            const username = localStorage.getItem('win98_username') || 'Invitado';
+            const newCommentText = notesTextarea.value.trim();
+
+            // Si no hay texto, no hace nada.
+            if (newCommentText === '') {
+                alert('Por favor, escribí un comentario antes de enviar.');
+                return;
+            }
+
+            // 2. Crea el nuevo elemento de comentario.
+            const newCommentElement = document.createElement('p');
+            newCommentElement.innerHTML = `<strong>${username}:</strong> ${newCommentText}`;
+            
+            // 3. Agrega el nuevo comentario al contenedor.
+            commentsContainer.appendChild(newCommentElement);
+            
+            // 4. Muestra la ventana de comentarios.
+            commentsWindow.style.display = 'block';
+            highestZIndex++;
+            commentsWindow.style.zIndex = highestZIndex;
+
+            // 5. Opcional: Limpia el textarea y cierra la ventana de notas.
+            notesTextarea.value = '';
+            document.getElementById('window-notas').style.display = 'none';
+        });
+    }
