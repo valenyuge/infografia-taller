@@ -775,3 +775,25 @@ body.login-page {
     width: 35%;    /* Establece el nuevo ancho que desees */
     height: 40%;   /* Establece el nuevo alto que desees */
 }
+
+/* Estilo para la imagen WordArt superior en la página de login */
+.wordart-top {
+    position: absolute; /* La posiciona sin afectar el flujo del documento */
+    top: 10%;           /* Distancia desde la parte superior (ajustar si es necesario) */
+    left: 50%;          /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajuste para un centrado perfecto */
+    max-width: 70%;     /* Asegura que no sea demasiado ancha */
+    height: auto;
+    z-index: 1;         /* Asegura que esté por encima del fondo */
+}
+
+/* Estilo para la imagen WordArt inferior */
+.wordart-bottom {
+    position: absolute;
+    bottom: 5%;        /* Distancia desde la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 70%;
+    height: auto;
+    z-index: 1;
+}
