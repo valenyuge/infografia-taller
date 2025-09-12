@@ -479,6 +479,7 @@ body.login-page {
     border: 1px inset #808080;
     height: 22px;
     padding: 0 4px;
+    font-family: 'MS Sans Serif';
 }
 
 .window-body.ie-body {
@@ -508,7 +509,6 @@ body.login-page {
     border: 2px inset #808080;
     height: 600px; /* Altura de la pantalla negra */
     width: 1300px;
-    padding: 15px;
     overflow-y: auto;
 }
 
@@ -526,6 +526,11 @@ body.login-page {
     height: 26px;
     border: 1px outset #fff;
     background-color: #c0c0c0;
+}
+
+.controls-left {
+    flex-grow: 1; /* Hace que este contenedor ocupe el espacio sobrante */
+    text-align: center; /* Centra los botones dentro del contenedor */
 }
 
 .controls-right {
@@ -852,4 +857,407 @@ body.login-page {
     margin: 0 2px; /* Alinea con los bordes de la ventana */
     background-color: #fff; /* Asegura un fondo blanco para la imagen */
     overflow: hidden; /* Evita scroll si la imagen es más grande */
+}
+
+/* --- Estilos para la Ventana de Internet Explorer (Chat GPT y Arte) --- */
+
+#window-arte {
+    width: 1250px;
+    height: 800px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Barra de menú (Archivo, Edición, etc.) */
+#window-arte .app-toolbar {
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+/* Barra de dirección */
+.ie-address-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    background-color: #c0c0c0;
+    border-bottom: 1px solid #808080;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.ie-address-bar .address-input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    border: 1px inset #808080;
+    background-color: white;
+    padding: 1px;
+}
+
+.ie-address-bar .address-globe-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.ie-address-bar input {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    height: 18px;
+    padding: 0 2px;
+}
+
+.ie-address-bar .go-button {
+    background-color: #c0c0c0;
+    border: 1px outset #fff;
+    padding: 0 8px;
+    height: 22px;
+    margin-left: 5px;
+}
+
+/* Barra de enlaces (Home, Figma, Freepik) */
+.ie-links-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 4px;
+    background-color: #c0c0c0;
+    border-bottom: 1px solid #808080;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.ie-links-bar .link-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.ie-links-bar .link-item img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Contenido principal (sidebar + main-content) */
+#window-arte .ie-body {
+    flex-grow: 1;
+    display: flex;
+    background-color: #c0c0c0;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita scrolls dobles */
+}
+
+/* Barra lateral izquierda */
+.ie-sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    background-color: #eff3f6;
+    border-right: 1px solid #a0a0a0;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 13px;
+}
+
+.ie-sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.ie-sidebar .sidebar-header img {
+    width: 24px;
+    height: 24px;
+}
+
+.ie-sidebar p {
+    margin: 0 0 15px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.ie-sidebar .sidebar-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.ie-sidebar .sidebar-section:hover {
+    background-color: #000080;
+    color: white;
+}
+
+/* Contenido principal derecho (ahora con dos columnas) */
+.ie-main-content {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 300px;
+}
+
+.left-column .chatgpt-logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.left-column .welcome-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Barra de enlaces ahora vertical */
+.text-links-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 15px;
+    width: 100%;
+}
+
+.text-link {
+    color: #0000FF;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.text-link:hover {
+    color: #800080;
+}
+
+/* Grid de contenido (ahora columna derecha) */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* --- Estilos para cada 'content-item' (las tarjetas de la grilla) --- */
+.content-item {
+    display: flex;
+    flex-direction: column; /* La imagen de arriba, el texto abajo */
+    text-decoration: none;
+    color: black;
+    background-color: #f0f0f0;
+    border: 1px solid #c0c0c0;
+    padding: 0;
+    box-shadow: 1px 1px 0 #fff, -1px -1px 0 #808080;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    max-width: 320px;
+    max-height: 300px;
+}
+
+/* Imagen principal dentro de la tarjeta */
+.content-item > img { /* El > asegura que afecte solo a la img directa */
+    width: 100%;
+    height: 80%;
+    display: block;
+    object-fit: cover; /* Para que la imagen cubra el área sin deformarse */
+    flex-shrink: 0; /* Evita que la imagen se encoja si hay mucho texto */
+    border: 3px solid #808080; /* Grosor, estilo y color del borde */
+    box-sizing: border-box;
+}
+
+/* Contenedor del ícono y el texto */
+.text-content {
+    padding: 8px 10px; /* Padding interno para el texto y el ícono */
+    background-color: #f0f0f0; /* Color de fondo del área de texto */
+    display: flex; /* Para alinear el ícono grande y el texto */
+    align-items: center; /* Alinea verticalmente */
+    gap: 10px; /* Espacio entre el ícono y el bloque de texto */
+    width: 100%;
+    flex-grow: 1; /* Permite que este bloque ocupe el espacio restante */
+    border-top: 1px solid #c0c0c0; /* Línea separadora sutil */
+}
+
+/* Estilo para el ícono grande a la izquierda del texto */
+.text-icon {
+    width: 32px; /* Tamaño del ícono grande */
+    height: 32px;
+    flex-shrink: 0; /* Evita que el ícono se encoja */
+    object-fit: contain; /* Para que la imagen del ícono se ajuste */
+}
+
+/* Contenedor del span y small */
+.text-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Alinea el texto a la izquierda */
+    flex-grow: 1; /* Permite que ocupe el espacio restante */
+}
+
+.text-block span {
+    font-weight: bold;
+    font-size: 1em; /* Tamaño del título principal */
+    line-height: 1.2;
+}
+
+.text-block small {
+    font-size: 0.85em; /* Tamaño del subtítulo */
+    color: #555;
+    line-height: 1.2;
+    margin-top: 2px; /* Pequeño espacio entre título y subtítulo */
+}
+
+/* Barra de estado inferior */
+.status-bar {
+    background-color: #c0c0c0;
+    border-top: 1px solid #808080;
+    padding: 2px 5px;
+    height: 20px;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.ie-main-content {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    gap: 20px;
+
+    /* --- CAMBIO AQUÍ --- */
+    background-image: url('../img/fondoexplorer.png'); /* o .jpg, la extensión que tenga tu archivo */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* --- Estilo para el buscador en la barra de enlaces --- */
+
+.search-input-wrapper {
+    position: relative; /* Contenedor para el posicionamiento absoluto */
+}
+
+/* Estilo para el ícono y texto que van dentro del input */
+.search-input-wrapper label {
+    position: absolute; /* Se posiciona sobre el input */
+    top: 50%;
+    left: 5px; /* Pequeño espacio desde la izquierda */
+    transform: translateY(-50%); /* Centrado vertical perfecto */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #808080; /* Color gris para el texto */
+    cursor: text; /* Cambia el cursor para que parezca un campo de texto */
+}
+
+/* Estilo para la barra blanca (el input) */
+.search-input-wrapper input {
+    width: 400%; /* Ancho total del buscador */
+    height: 22px;
+    background-color: #fff;
+    border: 1px inset #808080;
+    padding-left: 60px; /* IMPORTANTE: Deja espacio para el texto y el ícono */
+}
+
+/* --- Estilos para el par de imágenes (PC y Cámara) --- */
+
+.image-pair-container {
+    display: flex;
+    justify-content: space-between; /* Pone una imagen a cada extremo */
+    align-items: flex-start; /* Alinea las imágenes en la parte superior */
+    width: 100%; /* Ocupa todo el ancho de la columna izquierda */
+    margin-bottom: 0px; /* Espacio antes de los enlaces de texto */
+}
+
+.pc-image, .camera-image {
+    width: 80px; /* Tamaño de las imágenes */
+    height: auto;
+}
+
+.camera-image {
+    margin-top: 20px; /* Baja la imagen de la cámara */
+}
+
+/* --- Estilos para el botón "Ver Gráfico" dentro del popup --- */
+
+.content-actions {
+    text-align: left; /* Alinea el botón a la izquierda */
+    margin-top: 20px; /* Espacio arriba del botón */
+}
+
+.view-chart-btn {
+    background-color: #c0c0c0;
+    border: 1px outset #fff;
+    padding: 3px 15px;
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+/* --- Estilo para popups que solo contienen una imagen --- */
+.notepad-body.image-only {
+    padding: 0; /* Sin padding para que la imagen ocupe todo */
+    overflow: hidden; /* Oculta cualquier desborde */
+}
+
+.notepad-body.image-only img {
+    width: 90%;
+    height: auto;
+    object-fit: contain; /* Ajusta la imagen sin deformarla */
+    padding-top: 10px;
+}
+
+.media-player-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Estilos Personalizados para el Slider de Volumen --- */
+
+/* Estilo general para el slider */
+.volume-slider {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 80px;
+    height: 6px;
+    background: #808080; /* Color de la barra (track) */
+    border: 1px inset #fff;
+    outline: none;
+    padding: 0;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #c0c0c0; /* Color del círculo */
+    border: 1px outset #fff;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #c0c0c0; /* Color del círculo */
+    border: 1px outset #fff;
+    cursor: pointer;
+}
+
+.paint-canvas img {
+    object-fit: contain; /* Ajusta la imagen sin deformarla */
 }
