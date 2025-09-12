@@ -1261,3 +1261,38 @@ body.login-page {
 .paint-canvas img {
     object-fit: contain; /* Ajusta la imagen sin deformarla */
 }
+
+/* --- Estilos para el Popup de Encuesta --- */
+.survey-popup {
+    width: 20%; /* Ancho fijo */
+    min-width: 380px;
+    z-index: 99; /* Asegura que esté por encima de otras ventanas */
+}
+
+.survey-body {
+    background-color: #c0c0c0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.survey-body img {
+    width: 32px;
+    height: 32px;
+}
+
+.survey-actions {
+    background-color: #c0c0c0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+
+.survey-actions button {
+    width: 80px;
+    height: 24px;
+    margin: 0 5px;
+    border: 1px outset #fff;
+    background-color: #c0c0c0;
+}

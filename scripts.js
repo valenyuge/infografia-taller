@@ -231,4 +231,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- LÓGICA PARA EL POPUP DE ENCUESTA AL CERRAR PAINT ---
+    const paintWindow = document.getElementById('window-debate');
+    const surveyWindow = document.getElementById('window-survey');
+
+    if (paintWindow && surveyWindow) {
+        const paintCloseButton = paintWindow.querySelector('.close-btn');
+        const surveyTitle = document.getElementById('survey-title');
+
+        if (paintCloseButton) {
+            // "Interceptamos" el clic en el botón de cerrar del Paint
+            paintCloseButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Detiene el cierre normal
+                
+                // 1. Oculta la ventana de Paint
+                paintWindow.style.display = 'none';
+
+                // 2. Obtiene el nombre del usuario
+                const username = localStorage.getItem('win98_username') || 'Usuario';
+                
+                // 3. Personaliza y abre el popup de encuesta
+                surveyTitle.textContent = `¡Hola ${username}!`;
+                openWindow(surveyWindow);
+            });
+        }
+    }
+
+    
+
 });
