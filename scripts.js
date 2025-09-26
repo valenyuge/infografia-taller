@@ -158,16 +158,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 4. Para los items de la grilla en la ventana de "Arte" (Internet Explorer)
-    document.querySelectorAll('.content-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            const baseId = item.id.split('-')[1];
-            const windowId = 'window-' + baseId;
-            const windowToOpen = document.getElementById(windowId);
-            
-            openWindow(windowToOpen);
-        });
+const leftColumn = document.querySelector('.left-column');
+
+if (exploreButton && exploreContainer && leftColumn) {
+    exploreButton.addEventListener('click', () => {
+        exploreButton.style.display = 'none'; // oculta el botón
+        // oculta todo lo que no sea el contenedor
+        leftColumn.querySelector('.chatgpt-logo').style.display = 'none';
+        leftColumn.querySelector('.welcome-text').style.display = 'none';
+        exploreContainer.style.display = 'flex'; // muestra el contenedor
+        exploreContainer.scrollIntoView({ behavior: 'smooth' });
     });
+}
+
+
+
 
 // --- LÓGICA PARA LOS CONTROLES DEL MEDIA PLAYER ---
     const video = document.getElementById('mediaPlayerVideo');
@@ -212,51 +217,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- LÓGICA PARA LA PALETA DE COLORES DE PAINT ---
-    const paintImage = document.getElementById('paintImage');
+// --- BOTONES ANTERIOR Y SIGUIENTE EN PAINT ---
+const btnPrev = document.getElementById('btn-prev');
+const btnNext = document.getElementById('btn-next');
+const paintImage = document.getElementById('paintImage');
 
-    // Solo ejecuta este código si la imagen de Paint existe
-    if (paintImage) {
-        // Selecciona todos los colores que tienen un ID
-        const colorButtons = document.querySelectorAll('.paint-palette [id^="color-"]');
+if (btnPrev && btnNext && paintImage) {
+    let currentIndex = 1; // empieza en paint1
+    const totalImages = 14;
 
-        colorButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Obtiene el número del ID (ej: "color-paint1" -> "paint1")
-                const imageName = button.id.split('-')[1];
-                
-                // Cambia la fuente de la imagen en el lienzo
-                paintImage.src = `img/${imageName}.png`;
-            });
-        });
+    function updatePaintImage() {
+        paintImage.src = `img/paint${currentIndex}.png`;
+
+        // Habilita o deshabilita los botones según el índice
+        btnPrev.disabled = currentIndex === 1;
+        btnNext.disabled = currentIndex === totalImages;
     }
 
-    // --- LÓGICA PARA EL POPUP DE ENCUESTA AL CERRAR PAINT ---
-    const paintWindow = document.getElementById('window-debate');
-    const surveyWindow = document.getElementById('window-survey');
-
-    if (paintWindow && surveyWindow) {
-        const paintCloseButton = paintWindow.querySelector('.close-btn');
-        const surveyTitle = document.getElementById('survey-title');
-
-        if (paintCloseButton) {
-            // "Interceptamos" el clic en el botón de cerrar del Paint
-            paintCloseButton.addEventListener('click', (e) => {
-                e.stopPropagation(); // Detiene el cierre normal
-                
-                // 1. Oculta la ventana de Paint
-                paintWindow.style.display = 'none';
-
-                // 2. Obtiene el nombre del usuario
-                const username = localStorage.getItem('win98_username') || 'Usuario';
-                
-                // 3. Personaliza y abre el popup de encuesta
-                surveyTitle.textContent = `¡Hola ${username}!`;
-                openWindow(surveyWindow);
-            });
+    btnPrev.addEventListener('click', () => {
+        if (currentIndex > 1) {
+            currentIndex--;
+            updatePaintImage();
         }
-    }
+    });
 
+    btnNext.addEventListener('click', () => {
+        if (currentIndex < totalImages) {
+            currentIndex++;
+            updatePaintImage();
+        }
+    });
+
+    // Inicializa la imagen y los botones
+    updatePaintImage();
+}
     
 
 });
