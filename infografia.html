@@ -186,38 +186,168 @@
 
 
 
-<div class="window" id="window-ley" style="top: 100px; left: 300px;" >
-            <div class="title-bar">
-                <span class="title-bar-text">Reproductor - ¿Quién firma la obra?</span>
-                <div class="title-bar-controls">
-                    <button class="close-btn">r</button>
-                </div>
-            </div>
-            <div class="app-toolbar">
-                <span><u>A</u>rchivo</span>
-                <span><u>V</u>ista</span>
-                <span><u>P</u>lay</span>
-                <span><u>N</u>avegar</span>
-                <span><u>F</u>avoritos</span>
-                <span><u>A</u>yuda</span>
-            </div>
-            <div class="media-player-body">
-                <div class="media-player-screen">
-                    <video src="img/videonucleo.mp4" id="mediaPlayerVideo"></video>
-                </div>
-                <div class="media-player-controls">
-                    <div class="controls-left">
-                        <button id="playBtn">►</button>
-                        <button id="pauseBtn">❚❚</button>
-                        <button id="stopBtn">■</button>
-                    </div>
-                    <div class="controls-right">
-                        <img src="img/volumen.png" alt="Volumen" class="volume-icon-img" id="volumeIcon">
-                        <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.1" value="1">
-                    </div>
-                </div>
+<div class="window" id="window-ley" style="top: 50px; left: 200px;">
+    <div class="title-bar">
+        <span class="title-bar-text">🔍 Debate: ¿Quién firma la obra?</span>
+        <div class="title-bar-controls">
+            <button class="close-btn">r</button>
         </div>
     </div>
+    <div class="app-toolbar">
+        <span><u>A</u>rchivo</span>
+        <span><u>V</u>ista</span>
+        <span><u>C</u>hat</span>
+        <span><u>N</u>avegar</span>
+        <span><u>F</u>avoritos</span>
+        <span><u>A</u>yuda</span>
+    </div>
+
+<div class="chat-window">
+  <!-- Pantalla 1 -->
+  <div class="chat-screen" id="screen-1">
+    <div class="chat-messages">
+      <div class="message carolina"><strong>Carolina dice:</strong> La inteligencia artificial se apropia de un lenguaje
+que pone en riesgo la originalidad humana.  ¿Cómo puede llamarse
+arte algo que no tiene estilo propio?
+</div>
+    <div class="message carolina"><strong>Carolina dice:</strong> <img src="img/chat1.png"> <img src="img/chat2.png"></div>
+      <div class="message marcos44"><strong>Marcos44 dice:</strong> Pero el arte no se
+define solo por la técnica o la mano del artista, sino también por la intención, el contexto, la
+recepción del público y la validación. </div>
+      <div class="message marcos44"><strong>Marcos44 dice:</strong> Si una obra hecha con IA provoca emoción ¿por qué no sería arte? </div>
+      <div class="message marcos44"><strong>Marcos44 dice:</strong> Cuando mirás una obra, ¿qué te resulta más importante? </div>
+    </div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" disabled>Estilo propio reconocible.</button>
+            <button class="chat-option" data-next="screen-2">Que transmita emociones.</button>
+            </div>
+        </div>
+        </div>
+
+  <!-- Pantalla 2 -->
+  <div class="chat-screen" id="screen-2" style="display:none;">
+    <div class="chat-messages">
+      <div class="message usuario"><strong>Usuario dice:</strong> HOLAAA. Para mí lo más importante es que me haga sentir algo, aunque no conozca al autor! 
+</div>
+      <div class="message marcos44"><strong>Marcos44 dice:</strong> Pero el arte no se
+define solo por la técnica o la mano del artista, sino también por la intención, el contexto, la
+recepción del público y la validación. </div>
+      <div class="message marcos44"><strong>Marcos44 dice:</strong> Si una obra hecha con IA provoca emoción ¿por qué no sería arte? </div>
+      <div class="message marcos44"><strong>Marcos44 dice:</strong> Cuando mirás una obra, ¿qué te resulta más importante? </div>
+    </div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">Continuidad cultural legitima.</button>
+            <button class="chat-option" disabled>Un riesgo de perder originalidad.</button>
+            </div>
+        </div>
+        </div>
+
+  <!-- Pantalla 3 -->
+  <div class="chat-screen" id="screen-3" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-4" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-5" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-6" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-7" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-8" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-9" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-10" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+
+  <div class="chat-screen" id="screen-11" style="display:none;">
+    <div class="chat-messages"></div>
+        <div class="chat-options-block">
+            <div class="chat-options-title">Elegí tu respuesta para participar del debate:</div>
+            <div class="chat-options">
+            <button class="chat-option" data-next="screen-2">El usuario que da la instrucción</button>
+            <button class="chat-option" disabled>El programador de la IA</button>
+            </div>
+        </div>
+        </div>
+</div>
+
+</div>
 
 
         <div class="window" id="window-debate" style="top: 100px; left: 300px;">

@@ -250,7 +250,77 @@ if (btnPrev && btnNext && paintImage) {
 
     // Inicializa la imagen y los botones
     updatePaintImage();
-}
+                    }
     
+
+    // --- CHAT OPCIONES ---
+        const chatOptions = document.querySelectorAll(".chat-option[data-next]");
+
+        chatOptions.forEach(option => {
+            option.addEventListener("click", () => {
+                const currentScreen = option.closest(".chat-screen");
+                const nextScreenId = option.getAttribute("data-next");
+                const nextScreen = document.getElementById(nextScreenId);
+
+                if (!currentScreen || !nextScreen) return;
+
+                // Ocultar pantalla actual
+                currentScreen.style.display = "none";
+
+                // Mostrar pantalla siguiente
+                nextScreen.style.display = "block";
+
+                // Agregar mensaje del usuario a la próxima pantalla
+                const nextMessages = nextScreen.querySelector(".chat-messages");
+                if (nextMessages) {
+                    const myMessage = document.createElement("div");
+                    myMessage.classList.add("message", "usuario");
+                    const username = localStorage.getItem('win98_username') || 'Invitado';
+                    myMessage.innerHTML = `<strong>${username} dice:</strong> ${option.textContent}`;
+                    nextMessages.appendChild(myMessage);
+
+                    // Scroll al final
+                    nextMessages.scrollTop = nextMessages.scrollHeight;
+                }
+            });
+        });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const username = localStorage.getItem('win98_username') || 'Invitado';
+
+    // Reemplazamos los mensajes con clase "usuario" al cargar la pantalla
+    document.querySelectorAll('.message.usuario').forEach(msg => {
+        const text = msg.textContent; // texto que escribió el usuario
+        msg.innerHTML = `<strong>${username} dice:</strong> ${text}`;
+        msg.classList.add('invitado'); // opcional para darle color
+    });
+
+    // Chat-option: al seleccionar, agrega mensaje con el nombre ingresado
+    const chatOptions = document.querySelectorAll(".chat-option[data-next]");
+    chatOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            const currentScreen = option.closest(".chat-screen");
+            const nextScreenId = option.getAttribute("data-next");
+            const nextScreen = document.getElementById(nextScreenId);
+            if (!currentScreen || !nextScreen) return;
+
+            currentScreen.style.display = "none";
+            nextScreen.style.display = "block";
+
+            const nextMessages = nextScreen.querySelector(".chat-messages");
+            if (nextMessages) {
+                const myMessage = document.createElement("div");
+                myMessage.classList.add("message", "usuario");
+                myMessage.innerHTML = `<strong>${username} dice:</strong> ${option.textContent}`;
+                nextMessages.appendChild(myMessage);
+                nextMessages.scrollTop = nextMessages.scrollHeight;
+            }
+        });
+    });
+});
+
+
+
+
 
 });

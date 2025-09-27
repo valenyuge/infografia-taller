@@ -1385,3 +1385,86 @@ body.login-page {
     text-align: left;
     font-size: 30px;
 }
+
+
+.chat-window {
+    width: 1500px;      /* ancho mayor */
+    height: 700px;      /* alto mayor */
+    padding: 30px;      /* espacio interno */
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    position: relative;  /* necesario para el posicionamiento absoluto de opciones */
+    gap: 20px;          /* separa los bloques internos */
+}
+
+/* Contenedor de mensajes */
+.chat-window .chat-messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;          /* separa los mensajes */
+    padding: 10px;
+    overflow-y: auto;    /* scroll solo para los mensajes */
+    padding-bottom: 120px; /* deja espacio para el bloque de opciones fijo */
+}
+
+/* Bloque de opciones fijo al fondo con fondo gris */
+.chat-window .chat-options-block {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 150px;
+    background-color: #e0e0e0; 
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid #ccc;
+}
+
+/* Título sobre las opciones */
+.chat-window .chat-options-title {
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Botones de chat */
+.chat-window .chat-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 80px;
+}
+
+.chat-window .chat-option {
+    flex: 1;                       /* cada botón ocupa el mismo ancho */
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border-top-color: #fff;          /* línea superior blanca */
+    border-left-color: #fff;         /* línea izquierda blanca */
+    border-bottom-color: #000;       /* línea inferior negra */
+    border-right-color: #000;        /* línea derecha negra */
+    transition: background-color 0.2s;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 20px;
+}
+
+.chat-window .chat-option:hover {
+    background-color: #f0f0f0;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+/* Colores por usuario */
+.message.carolina strong { color: #FF4C4C; }    /* rojo */
+.message.marcos44 strong { color: #4C6EFF; }    /* azul */
+.message.lara strong { color: #D8B4FF; }        /* violeta claro */
+.message.juli_97 strong { color: #FFD580; }     /* naranja claro */
+.message.usuario strong { color: #A8FF8C; }    /* verde claro */
