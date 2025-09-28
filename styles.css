@@ -1389,7 +1389,7 @@ body.login-page {
 
 .chat-window {
     width: 1500px;      /* ancho mayor */
-    height: 700px;      /* alto mayor */
+    height: 100%;      /* alto mayor */
     padding: 30px;      /* espacio interno */
     display: flex;
     flex-direction: column;
@@ -1468,3 +1468,45 @@ body.login-page {
 .message.lara strong { color: #D8B4FF; }        /* violeta claro */
 .message.juli_97 strong { color: #FFD580; }     /* naranja claro */
 .message.usuario strong { color: #A8FF8C; }    /* verde claro */
+
+#window-popup {
+  width: 100%;
+  height: 100%;
+}
+
+
+.link-style {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link-style:hover {
+  color: blue;
+}
+
+.popup-window {
+  position: absolute;
+  top: 120px;   /* lo ponés donde quieras */
+  left: 120px;
+  z-index: 999;
+}
+
+.image-viewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;   /* tamaño fijo para que no crezca con la imagen */
+}
+
+.image-viewer img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.image-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+

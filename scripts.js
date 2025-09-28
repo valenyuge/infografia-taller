@@ -320,6 +320,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const username = localStorage.getItem('win98_username') || 'Invitado';
+  const popupUsername = document.getElementById('popup-username');
+  if (popupUsername) popupUsername.textContent = username;
+});
+
+// --- POPUP DE IMÁGENES ---
+document.addEventListener("DOMContentLoaded", () => {
+  const miraEsto = document.querySelector("#mira-esto .link-style");
+  const popup = document.getElementById("popup-imagenes");
+  const closeBtn = popup.querySelector("button[aria-label='Close']");
+  const popupImage = document.getElementById("popupImage");
+  const prevBtn = document.getElementById("prevImage");
+  const nextBtn = document.getElementById("nextImage");
+
+  const images = ["img/popup1.png", "img/popup2.png", "img/popup3.png"];
+  let currentIndex = 0;
+
+  function showImage(index) {
+    popupImage.src = images[index];
+  }
+
+  miraEsto.addEventListener("click", () => {
+    popup.style.display = "block";
+    popup.style.zIndex = 9999;
+    currentIndex = 0;
+    showImage(currentIndex);
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      showImage(currentIndex);
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      showImage(currentIndex);
+    }
+  });
+});
 
 
 
