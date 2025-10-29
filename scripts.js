@@ -326,47 +326,47 @@ document.addEventListener('DOMContentLoaded', () => {
   if (popupUsername) popupUsername.textContent = username;
 });
 
-// --- POPUP DE IMÁGENES ---
 document.addEventListener("DOMContentLoaded", () => {
   const miraEsto = document.querySelector("#mira-esto .link-style");
   const popup = document.getElementById("popup-imagenes");
-  const closeBtn = popup.querySelector("button[aria-label='Close']");
+  const closeBtn = document.getElementById("closePopup");
   const popupImage = document.getElementById("popupImage");
   const prevBtn = document.getElementById("prevImage");
   const nextBtn = document.getElementById("nextImage");
 
-  const images = ["img/popup1.png", "img/popup2.png", "img/popup3.png"];
+  const images = ["img/popup1.png", "img/popup2.png", "img/popup3.png"]; // Tus imágenes
   let currentIndex = 0;
 
   function showImage(index) {
     popupImage.src = images[index];
   }
 
+  // Abrir popup
   miraEsto.addEventListener("click", () => {
-    popup.style.display = "block";
-    popup.style.zIndex = 9999;
-    currentIndex = 0;
+    currentIndex = 0; // Empieza en la primera imagen
     showImage(currentIndex);
+    popup.style.display = "flex";
   });
 
+  // Cerrar popup
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
 
+  // Imagen anterior
   prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      showImage(currentIndex);
-    }
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
   });
 
+  // Imagen siguiente
   nextBtn.addEventListener("click", () => {
-    if (currentIndex < images.length - 1) {
-      currentIndex++;
-      showImage(currentIndex);
-    }
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
   });
 });
+
+
 
 
 
