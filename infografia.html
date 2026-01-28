@@ -338,20 +338,10 @@ recepción del público y la validación. </div>
         </div>
         </div>
 
-        <div class="window" id="popup-imagenes" style="display:none; position: absolute; top: 150px; left: 250px; width: 450px; z-index: 10001;">
-    <div class="title-bar">
-        <div class="title-bar-text">Visualizador de Evidencia</div>
-        <div class="title-bar-controls">
-            <button aria-label="Close" onclick="document.getElementById('popup-imagenes').style.display='none'"></button>
-        </div>
-    </div>
-    <div class="window-body" style="text-align: center; background: #000;">
-        <img id="popupImage" src="img/popup1.png" alt="Popup Image" style="max-width: 100%; height: auto;">
-        <div class="field-row" style="justify-content: center; padding: 10px; background: #C0C7C8;">
-            <button id="prevImage"> &lt; Anterior </button>
-            <button id="nextImage"> Siguiente &gt; </button>
-        </div>
-    </div>
+        <div id="popup-imagenes" style="display:none;"> <button id="closePopup" onclick="document.getElementById('popup-imagenes').style.display='none'">×</button>
+    <img id="popupImage" src="img/popup1.png" alt="Popup Image">
+    <button id="prevImage">←</button>
+    <button id="nextImage">→</button>
 </div>
 
 <div class="window popup" id="screen-8" style="display:none; position:absolute; top:120px; left:180px; width:400px;">
